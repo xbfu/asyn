@@ -10,16 +10,16 @@ sudo sh install-nvidia-driver.sh
 ```
 
 ## Initialize a k8s cluster
-### On master node
+#### On master node
 ``` bash
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<master_addr>
 sudo sh init-k8s-cluster.sh
 ```
-### On  worker nodes
-This command appears when you run 'kubeadm init ……' on your master node. Copy it and run on each worker node
+#### On  worker nodes
 ``` bash
 sudo kubeadm join <master_addr>:6443 --token 9nzp6b.gguo --discovery-token-ca-cert-hash sha256:1b9a48db383b
 ``` 
+This command appears when you run 'kubeadm init ……' on your master node. Copy it and run on each worker node.
 
 ## Install NVIDIA k8s-device plugin on worker nodes
 #### Install NVIDIA k8s-device plugin on each worker node
