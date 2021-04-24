@@ -22,11 +22,11 @@ sudo kubeadm join <master_addr>:6443 --token 9nzp6b.gguo --discovery-token-ca-ce
 ``` 
 
 ## Install NVIDIA k8s-device plugin on worker nodes
-### Install NVIDIA k8s-device plugin on each worker node
+#### Install NVIDIA k8s-device plugin on each worker node
 ``` bash
 sudo sh install-k8s-device-plugin.sh
 ```
-### Edit the docker daemon config file which is usually present at `/etc/docker/daemon.json` on each worker node:
+#### Edit the docker daemon config file which is usually present at `/etc/docker/daemon.json` on each worker node:
 ```json
 {
     "default-runtime": "nvidia",
@@ -38,7 +38,7 @@ sudo sh install-k8s-device-plugin.sh
     }
 }
 ```
-### Enabling GPU support in k8s on master node
+#### Enabling GPU support in k8s on master node
 ``` bash
 kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.6.0/nvidia-device-plugin.yml
 ```
