@@ -19,14 +19,14 @@ sudo sh init-k8s-cluster.sh
 ``` bash
 sudo kubeadm join <master_addr>:6443 --token 9nzp6b.gguo --discovery-token-ca-cert-hash sha256:1b9a48db383b
 ``` 
-This command appears when you run 'kubeadm init ……' on your master node. Copy it and run on each worker node.
+This command appears when you run `kubeadm init ……` on your master node. Copy it and run on each worker node.
 
 ## Install NVIDIA k8s-device plugin on worker nodes
 #### Install NVIDIA k8s-device plugin on each worker node
 ``` bash
 sudo sh install-k8s-device-plugin.sh
 ```
-#### Edit the docker daemon config file which is usually present at `/etc/docker/daemon.json` on each worker node:
+#### Edit the docker daemon config file which is usually present at `/etc/docker/daemon.json` on each worker node
 ```json
 {
     "default-runtime": "nvidia",
